@@ -1,0 +1,13 @@
+#scam-guard-banner {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 300px;
+  background: #111;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  z-index: 999999;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}

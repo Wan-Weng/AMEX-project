@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Account Sign In</title>
+  <style>
+    :root { --bg:#0b1220; --card:#ffffff; --muted:#6b7280; --accent:#2563eb; --warn:#b45309; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at 20% 10%, #1f3a8a, var(--bg));
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(420px, 100%);
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.35);
+      overflow: hidden;
+    }
+    header {
+      padding: 18px 20px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .brand { font-weight: 800; color: #111827; }
+    .tag { font-size: 12px; color: var(--muted); }
+    .content { padding: 18px 20px 20px; }
+    .notice {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: var(--warn);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.25rem;
+      margin-bottom: 14px;
+    }
+    .notice b { color: #7c2d12; }
+    label { display:block; margin: 10px 0 6px; font-size: 12px; font-weight: 700; color:#111827; }
+    input {
+      width: 100%;
+      padding: 10px 11px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 14px;
+      outline: none;
+    }
+    input:focus { border-color: #93c5fd; box-shadow: 0 0 0 3px rgba(147,197,253,0.35); }
+    button {
+      width: 100%;
+      margin-top: 14px;
+      padding: 11px 12px;
+      border: none;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(0.95); }
+    .links {
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    .links a { color: var(--accent); text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+    .fineprint {
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.15rem;
+    }
+    footer {
+      padding: 14px 20px;
+      border-top: 1px solid #eee;
+      background: #fafafa;
+      font-size: 12px;
+      color: #374151;
+      display:flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <header>
+      <div>
+        <div class="brand">Secure Portal</div>
+        <div class="tag">Sign in to continue</div>
+      </div>
+      <div class="tag">status: review</div>
+    </header>
+
+    <div class="content">
+      <!-- "Low risk but still risky" notice:
+           - Has mild urgency
+           - Says "verify" but not "suspended/locked"
+           - Includes off-platform contact (WhatsApp) as a subtle red flag
+      -->
+      <div class="notice">
+        Notice: We detected a new device login. Please <b>verify</b> your sign-in to keep your session active.
+        <br/>If you have trouble, contact support via <b>WhatsApp</b> for faster help.
+      </div>
+
+      <form>
+        <label>Email</label>
+        <input type="email" placeholder="name@example.com" autocomplete="email" />
+
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" autocomplete="current-password" />
+
+        <button type="button">Sign In</button>
+
+        <!-- Legit-looking links to reduce score -->
+        <div class="links">
+          <a href="#forgot">Forgot password</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#help">Help Center</a>
+        </div>
+
+        <div class="fineprint">
+          Tip: Verification may be requested during login to protect your account.
+          <br/>
+          (Test page for Scam Guard — do not enter real credentials.)
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <span>© 2026 Secure Portal</span>
+      <span class="tag">privacy • terms • support</span>
+    </footer>
+  </div>
+</body>
+</html>

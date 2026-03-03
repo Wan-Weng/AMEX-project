@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Scam Guard",
+  "version": "0.1.0",
+  "description": "Detects suspicious scam signals in real time.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
